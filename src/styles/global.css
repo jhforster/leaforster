@@ -14,13 +14,11 @@
 
   body {
     @apply bg-cream text-ink font-sans antialiased;
-    font-feature-settings: 'ss01', 'ss02';
   }
 
   h1, h2, h3, h4 {
     @apply font-serif text-ink;
-    font-feature-settings: 'ss01';
-    letter-spacing: -0.01em;
+    letter-spacing: -0.005em;
   }
 
   h1 { @apply text-4xl md:text-5xl lg:text-6xl leading-[1.1] font-medium; }

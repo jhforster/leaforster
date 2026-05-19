@@ -29,7 +29,7 @@ export const site = {
   specialties: [
     { title: 'Anxiety', blurb: 'Therapy for generalized anxiety, panic, social anxiety, and the chronic worry that makes day-to-day life feel heavier than it should.' },
     { title: 'Depression', blurb: 'Support for low mood, loss of motivation, and the persistent fog of depression — for adults and adolescents alike.' },
-    { title: 'Substance use & addiction', blurb: 'Non-judgmental, recovery-informed care for substance use, harm reduction, and the relationships that get caught up in it.' },
+    { title: 'Substance use', blurb: 'Non-judgmental, recovery-informed care for substance use and addiction, harm reduction, and the relationships that get caught up in it.' },
   ],
 
   // Areas served (used in footer + structured data) — drives local SEO
@@ -38,6 +38,7 @@ export const site = {
     'Salem, MA',
     'Marblehead, MA',
     'Danvers, MA',
+    'Peabody, MA',
     'Boston, MA',
     'Cambridge, MA',
     'North Andover, MA',
