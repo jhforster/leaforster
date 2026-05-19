@@ -19,6 +19,7 @@
   h1, h2, h3, h4 {
     @apply font-serif text-ink;
     letter-spacing: -0.005em;
+    text-wrap: balance;
   }
 
   h1 { @apply text-4xl md:text-5xl lg:text-6xl leading-[1.1] font-medium; }
