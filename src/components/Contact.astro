@@ -31,11 +31,13 @@ const fullAddress = site.location.showStreetAddress
               <dd><a href={`mailto:${site.email}`}>{site.email}</a></dd>
             </div>
           )}
-          <div>
-            <dt class="text-ink/60 mb-1">Headway profile</dt>
-            <dd><a href={site.headwayUrl} target="_blank" rel="noopener">care.headway.co/providers/lea-forster</a></dd>
-          </div>
         </dl>
+
+        <a href={site.headwayUrl} target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 mt-5 text-sm font-medium">
+          Headway profile
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+          <span class="sr-only">(opens in a new tab)</span>
+        </a>
       </div>
 
       <div class="lg:col-span-3">

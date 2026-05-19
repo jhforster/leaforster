@@ -47,6 +47,7 @@
 
   body {
     @apply bg-cream text-ink font-sans antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   h1, h2, h3, h4 {
@@ -63,7 +64,10 @@
   h2 { @apply text-3xl md:text-4xl leading-[1.15] font-medium; }
   h3 { @apply text-xl md:text-2xl leading-snug font-medium; }
 
-  p { @apply leading-relaxed; }
+  p {
+    @apply leading-relaxed;
+    text-wrap: pretty;
+  }
 
   a { @apply text-lavender-700 underline-offset-4 hover:text-lavender-600 transition-colors; }
 
@@ -83,6 +87,12 @@
 @layer components {
   .btn {
     @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-soft font-medium transition-all duration-200 no-underline;
+  }
+  .btn:has(> svg:last-child) {
+    padding-right: 1.25rem;
+  }
+  .btn:has(> svg:first-child) {
+    padding-left: 1.25rem;
   }
   .btn-primary {
     @apply btn bg-lavender-500 text-white hover:bg-lavender-600 shadow-card hover:-translate-y-0.5;
