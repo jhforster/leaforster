@@ -3,13 +3,13 @@
 
 export const site = {
   name: 'Lea Forster',
-  title: 'Therapist',
-  // TODO: confirm credentials/licensure to display (e.g. "LCSW", "LMHC")
-  credentials: '',
+  title: 'Licensed Mental Health Counselor',
+  credentials: 'LMHC',
+  credentialsFull: 'Licensed Mental Health Counselor',
   yearsOfExperience: 11,
   tagline: 'Compassionate, evidence-informed therapy for adolescents and adults on the North Shore and across Massachusetts.',
   shortBio:
-    'I’m a therapist based in Beverly, Massachusetts, with 11 years of experience supporting adolescents and adults navigating anxiety, depression, and substance use. I work both in-person at my Beverly office and virtually with clients across the state.',
+    'I’m Lea Forster, a Licensed Mental Health Counselor (LMHC) based in Beverly, Massachusetts, with 11 years of experience supporting adolescents and adults navigating anxiety, depression, and substance use. I work both in-person at my Beverly office and virtually with clients across the state.',
 
   // Practice details
   location: {
@@ -30,6 +30,26 @@ export const site = {
     { title: 'Anxiety', blurb: 'Therapy for generalized anxiety, panic, social anxiety, and the chronic worry that makes day-to-day life feel heavier than it should.' },
     { title: 'Depression', blurb: 'Support for low mood, loss of motivation, and the persistent fog of depression — for adults and adolescents alike.' },
     { title: 'Substance use', blurb: 'Non-judgmental, recovery-informed care for substance use and addiction, harm reduction, and the relationships that get caught up in it.' },
+  ],
+
+  // Therapy methods / modalities
+  methods: [
+    { title: 'Acceptance and Commitment Therapy (ACT)', short: 'ACT' },
+    { title: 'Motivational Interviewing', short: 'MI' },
+    { title: 'Cognitive Behavioral Therapy (CBT)', short: 'CBT' },
+  ],
+
+  // Insurance accepted (via Headway)
+  insurances: [
+    'Aetna',
+    'Blue Cross Blue Shield of Massachusetts',
+    'Carelon Behavioral Health',
+    'Cigna',
+    'Oscar',
+    'Oxford',
+    'Point32 Healthcare',
+    'Quest Behavioral Health',
+    'United Healthcare',
   ],
 
   // Areas served (used in footer + structured data) — drives local SEO
@@ -65,7 +85,7 @@ export const site = {
   // SEO
   siteUrl: 'https://leaforster.com', // update once final domain is chosen
   defaultDescription:
-    'Lea Forster is a Beverly, MA therapist with 11 years of experience helping adolescents and adults with anxiety, depression, and substance use. Virtual & in-person sessions across Massachusetts.',
+    'Lea Forster, LMHC is a Beverly, MA Licensed Mental Health Counselor with 11 years of experience helping adolescents and adults with anxiety, depression, and substance use. Virtual & in-person sessions across Massachusetts.',
   ogImage: '/og.png',
 
   // Crisis line shown in footer

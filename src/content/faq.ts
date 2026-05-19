@@ -4,7 +4,7 @@
 export const faqs = [
   {
     q: 'Do you accept insurance?',
-    a: 'Yes. I work with most major insurance plans through Headway, which handles billing, copays, and eligibility checks. Once you book a session through Headway you can add your insurance and get an instant cost estimate before the first appointment.',
+    a: 'Yes — I am in-network with Aetna, Blue Cross Blue Shield of Massachusetts, Carelon Behavioral Health, Cigna, Oscar, Oxford, Point32 Healthcare, Quest Behavioral Health, and United Healthcare through Headway. Headway handles billing, copays, and eligibility checks. Once you book a session you can add your insurance and get an instant cost estimate before the first appointment.',
   },
   {
     q: 'Are sessions virtual or in person?',

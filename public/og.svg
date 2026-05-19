@@ -8,9 +8,9 @@
   <rect width="1200" height="630" fill="url(#bg)"/>
   <circle cx="1050" cy="120" r="220" fill="#F2D9DC" opacity="0.55"/>
   <circle cx="120" cy="540" r="180" fill="#CDBBE2" opacity="0.5"/>
-  <g font-family="Fraunces, Georgia, serif" fill="#2B2530">
-    <text x="90" y="270" font-size="76" font-weight="500">Lea Forster</text>
-    <text x="90" y="350" font-size="40" fill="#5E4A82">Therapist · Beverly, MA</text>
+  <g font-family="Lora, Georgia, serif" fill="#2B2530">
+    <text x="90" y="260" font-size="72" font-weight="500">Lea Forster, LMHC</text>
+    <text x="90" y="335" font-size="34" fill="#5E4A82">Licensed Mental Health Counselor · Beverly, MA</text>
   </g>
   <g font-family="Inter, sans-serif" fill="#2B2530" opacity="0.78">
     <text x="90" y="450" font-size="28">Therapy for anxiety, depression, and substance use.</text>

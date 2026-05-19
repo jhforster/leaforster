@@ -7,7 +7,7 @@ const year = new Date().getFullYear();
   <div class="container-prose py-14">
     <div class="grid md:grid-cols-3 gap-10">
       <div>
-        <p class="font-serif text-xl text-white mb-2">{site.name}</p>
+        <p class="font-serif text-xl text-white mb-2">{site.name}, {site.credentials}</p>
         <p class="text-lavender-200/80 text-sm">{site.title} · {site.location.city}, {site.location.region}</p>
         <a href={site.headwayUrl} target="_blank" rel="noopener" class="inline-flex mt-5 btn-primary text-sm py-2 px-4 !text-white">Book a session</a>
       </div>

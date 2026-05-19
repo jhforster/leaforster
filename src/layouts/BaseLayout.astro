@@ -10,7 +10,7 @@ interface Props {
 }
 
 const {
-  title = `${site.name}, ${site.title} — Anxiety, Depression & Addiction Therapy in ${site.location.city}, ${site.location.region}`,
+  title = `${site.name}, ${site.credentials} — Therapy for Anxiety, Depression & Substance Use in ${site.location.city}, ${site.location.region}`,
   description = site.defaultDescription,
   canonicalPath = '/',
 } = Astro.props;
@@ -22,10 +22,20 @@ const personSchema = {
   '@context': 'https://schema.org',
   '@type': 'Person',
   name: site.name,
+  honorificSuffix: site.credentials,
   jobTitle: site.title,
   url: site.siteUrl,
   sameAs: [site.headwayUrl],
   knowsLanguage: site.language,
+  hasCredential: {
+    '@type': 'EducationalOccupationalCredential',
+    credentialCategory: 'license',
+    name: site.credentialsFull,
+    recognizedBy: {
+      '@type': 'GovernmentOrganization',
+      name: 'Commonwealth of Massachusetts',
+    },
+  },
   address: {
     '@type': 'PostalAddress',
     addressLocality: site.location.city,
@@ -54,11 +64,17 @@ const businessSchema = {
     addressCountry: site.location.country,
   },
   areaServed: site.areasServed.map((a) => ({ '@type': 'City', name: a })),
-  availableService: site.specialties.map((s) => ({
-    '@type': 'MedicalTherapy',
-    name: s.title,
-    description: s.blurb,
-  })),
+  availableService: [
+    ...site.specialties.map((s) => ({
+      '@type': 'MedicalTherapy',
+      name: s.title,
+      description: s.blurb,
+    })),
+    ...site.methods.map((m) => ({
+      '@type': 'MedicalTherapy',
+      name: m.title,
+    })),
+  ],
 };
 
 const faqSchema = {
@@ -78,7 +94,7 @@ const faqSchema = {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=2" />
 
     <title>{title}</title>
     <meta name="description" content={description} />
