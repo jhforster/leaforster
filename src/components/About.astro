@@ -1,0 +1,55 @@
+---
+import { site } from '~/content/site';
+---
+
+<section id="about" aria-labelledby="about-heading" class="py-20 md:py-28 bg-white border-y border-lavender-100/70">
+  <div class="container-prose">
+    <p class="eyebrow mb-4">About</p>
+    <h2 id="about-heading" class="mb-8 max-w-prose">A grounded, collaborative space to do the work.</h2>
+
+    <div class="grid md:grid-cols-3 gap-10 md:gap-16">
+      <div class="md:col-span-2 space-y-5 text-ink/80 text-lg leading-relaxed max-w-prose">
+        <p>{site.shortBio}</p>
+        <p>
+          {/* TODO: Lea — replace this paragraph with your own voice. */}
+          My approach is warm, curious, and practical. I draw from evidence-based modalities and tailor each
+          session to what you actually need — whether that is sorting through a hard transition, breaking out
+          of an anxious pattern, or finding steadier footing in recovery.
+        </p>
+        <p>
+          {/* TODO: Lea — a third paragraph if you'd like. Often the strongest one is about what therapy with you feels like. */}
+          You should not have to perform in therapy. Sessions are a place to think out loud, slow down, and
+          notice what is actually going on — together.
+        </p>
+      </div>
+
+      <aside class="space-y-6">
+        <div class="rounded-soft bg-lavender-50 p-6 border border-lavender-100">
+          <p class="eyebrow mb-3">At a glance</p>
+          <dl class="space-y-3 text-sm">
+            <div>
+              <dt class="text-ink/60">Experience</dt>
+              <dd class="font-medium">{site.yearsOfExperience} years</dd>
+            </div>
+            <div>
+              <dt class="text-ink/60">Works with</dt>
+              <dd class="font-medium">{site.populations.join(', ')}</dd>
+            </div>
+            <div>
+              <dt class="text-ink/60">Sessions</dt>
+              <dd class="font-medium">{site.sessionLength} · {site.modalities.join(' or ')}</dd>
+            </div>
+            <div>
+              <dt class="text-ink/60">Location</dt>
+              <dd class="font-medium">{site.location.city}, {site.location.region}</dd>
+            </div>
+            <div>
+              <dt class="text-ink/60">Language</dt>
+              <dd class="font-medium">{site.language}</dd>
+            </div>
+          </dl>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>

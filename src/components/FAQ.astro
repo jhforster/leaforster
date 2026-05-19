@@ -1,0 +1,26 @@
+---
+import { faqs } from '~/content/faq';
+---
+
+<section id="faq" aria-labelledby="faq-heading" class="py-20 md:py-28 bg-lavender-50/60 border-y border-lavender-100/70">
+  <div class="container-prose">
+    <div class="max-w-prose">
+      <p class="eyebrow mb-4">Frequently asked</p>
+      <h2 id="faq-heading" class="mb-10">Common questions before starting therapy.</h2>
+    </div>
+
+    <div class="space-y-3 max-w-3xl">
+      {faqs.map((f) => (
+        <details class="group rounded-soft bg-white border border-lavender-100 shadow-card open:border-lavender-300">
+          <summary class="flex items-center justify-between gap-4 cursor-pointer list-none p-5 md:p-6 font-medium text-ink">
+            <span>{f.q}</span>
+            <svg class="shrink-0 text-lavender-600 transition-transform group-open:rotate-45" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14"/><path d="M5 12h14"/></svg>
+          </summary>
+          <div class="px-5 md:px-6 pb-6 text-ink/75 leading-relaxed">
+            <p>{f.a}</p>
+          </div>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>

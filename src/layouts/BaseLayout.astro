@@ -1,0 +1,116 @@
+---
+import '~/styles/global.css';
+import { site } from '~/content/site';
+import { faqs } from '~/content/faq';
+
+interface Props {
+  title?: string;
+  description?: string;
+  canonicalPath?: string;
+}
+
+const {
+  title = `${site.name}, ${site.title} — Anxiety, Depression & Addiction Therapy in ${site.location.city}, ${site.location.region}`,
+  description = site.defaultDescription,
+  canonicalPath = '/',
+} = Astro.props;
+
+const canonical = new URL(canonicalPath, site.siteUrl).toString();
+const ogImage = new URL(site.ogImage, site.siteUrl).toString();
+
+const personSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: site.name,
+  jobTitle: site.title,
+  url: site.siteUrl,
+  sameAs: [site.headwayUrl],
+  knowsLanguage: site.language,
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: site.location.city,
+    addressRegion: site.location.region,
+    postalCode: site.location.postalCode,
+    addressCountry: site.location.country,
+  },
+};
+
+const businessSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'MedicalBusiness',
+  name: `${site.name}, ${site.title}`,
+  url: site.siteUrl,
+  image: ogImage,
+  description: site.defaultDescription,
+  sameAs: [site.headwayUrl],
+  priceRange: '$$',
+  medicalSpecialty: 'Psychiatric',
+  address: {
+    '@type': 'PostalAddress',
+    ...(site.location.showStreetAddress ? { streetAddress: site.location.street } : {}),
+    addressLocality: site.location.city,
+    addressRegion: site.location.region,
+    postalCode: site.location.postalCode,
+    addressCountry: site.location.country,
+  },
+  areaServed: site.areasServed.map((a) => ({ '@type': 'City', name: a })),
+  availableService: site.specialties.map((s) => ({
+    '@type': 'MedicalTherapy',
+    name: s.title,
+    description: s.blurb,
+  })),
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
+};
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:locale" content="en_US" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <meta name="theme-color" content="#9D86C4" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap"
+    />
+
+    <script type="application/ld+json" set:html={JSON.stringify(personSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(businessSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  </head>
+  <body>
+    <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:bg-white focus:px-4 focus:py-2 focus:rounded">Skip to content</a>
+    <slot />
+  </body>
+</html>

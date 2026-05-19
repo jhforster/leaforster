@@ -1,0 +1,34 @@
+---
+import { site } from '~/content/site';
+const year = new Date().getFullYear();
+---
+
+<footer class="bg-lavender-900 text-lavender-100">
+  <div class="container-prose py-14">
+    <div class="grid md:grid-cols-3 gap-10">
+      <div>
+        <p class="font-serif text-xl text-white mb-2">{site.name}</p>
+        <p class="text-lavender-200/80 text-sm">{site.title} · {site.location.city}, {site.location.region}</p>
+        <a href={site.headwayUrl} target="_blank" rel="noopener" class="inline-flex mt-5 btn-primary text-sm py-2 px-4 !text-white">Book a session</a>
+      </div>
+
+      <div>
+        <p class="eyebrow text-lavender-300 mb-3">Areas served</p>
+        <ul class="text-sm text-lavender-200/85 space-y-1.5">
+          {site.areasServed.map((a) => <li>{a}</li>)}
+        </ul>
+      </div>
+
+      <div>
+        <p class="eyebrow text-lavender-300 mb-3">In a crisis?</p>
+        <p class="text-sm text-lavender-200/85 leading-relaxed mb-3">{site.crisisLine.description}</p>
+        <p class="text-sm font-medium text-white">{site.crisisLine.label}</p>
+      </div>
+    </div>
+
+    <div class="mt-12 pt-6 border-t border-lavender-700/60 flex flex-col md:flex-row md:items-center md:justify-between gap-3 text-xs text-lavender-300">
+      <p>© {year} {site.name}. All rights reserved.</p>
+      <p>This website is for informational purposes only and does not constitute medical advice.</p>
+    </div>
+  </div>
+</footer>

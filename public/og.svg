@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#F7F4FB"/>
+      <stop offset="100%" stop-color="#E3D8F0"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="1050" cy="120" r="220" fill="#F2D9DC" opacity="0.55"/>
+  <circle cx="120" cy="540" r="180" fill="#CDBBE2" opacity="0.5"/>
+  <g font-family="Fraunces, Georgia, serif" fill="#2B2530">
+    <text x="90" y="270" font-size="76" font-weight="500">Lea Forster</text>
+    <text x="90" y="350" font-size="40" fill="#5E4A82">Therapist · Beverly, MA</text>
+  </g>
+  <g font-family="Inter, sans-serif" fill="#2B2530" opacity="0.78">
+    <text x="90" y="450" font-size="28">Therapy for anxiety, depression, and substance use.</text>
+    <text x="90" y="490" font-size="28">Virtual &amp; in-person across Massachusetts.</text>
+  </g>
+</svg>

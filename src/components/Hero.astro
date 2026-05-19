@@ -1,0 +1,42 @@
+---
+import { site } from '~/content/site';
+---
+
+<section id="top" class="relative overflow-hidden">
+  <!-- Decorative lavender blob -->
+  <div aria-hidden="true" class="absolute -top-32 -right-32 w-[520px] h-[520px] rounded-full bg-lavender-200/60 blur-3xl pointer-events-none"></div>
+  <div aria-hidden="true" class="absolute -bottom-40 -left-24 w-[380px] h-[380px] rounded-full bg-blush/50 blur-3xl pointer-events-none"></div>
+
+  <div class="container-prose relative pt-16 md:pt-24 pb-20 md:pb-28">
+    <div class="grid md:grid-cols-5 gap-10 md:gap-14 items-center">
+      <div class="md:col-span-3">
+        <p class="eyebrow mb-5">{site.location.city}, {site.location.region} · Virtual & in-person</p>
+        <h1 class="mb-6">
+          Therapy that meets you where you are.
+        </h1>
+        <p class="text-lg md:text-xl text-ink/75 max-w-prose mb-8">
+          {site.tagline}
+        </p>
+        <div class="flex flex-wrap gap-3">
+          <a href={site.headwayUrl} target="_blank" rel="noopener" class="btn-primary">
+            Book on Headway
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+          </a>
+          <a href="#about" class="btn-secondary">Learn more</a>
+        </div>
+        <p class="mt-6 text-sm text-ink/60">
+          {site.yearsOfExperience} years of experience · {site.populations.join(' & ')} · {site.language}
+        </p>
+      </div>
+
+      <div class="md:col-span-2">
+        <div class="relative aspect-[4/5] rounded-soft overflow-hidden bg-lavender-100 shadow-card">
+          <!-- TODO: replace with Lea's headshot at public/headshot.jpg -->
+          <div class="absolute inset-0 flex items-center justify-center text-center p-6 text-lavender-700">
+            <span class="font-serif text-lg">Headshot placeholder</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

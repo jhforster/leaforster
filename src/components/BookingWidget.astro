@@ -1,0 +1,22 @@
+---
+import { site } from '~/content/site';
+const hasEmbed = site.headwayEmbedHtml && site.headwayEmbedHtml.trim().length > 0;
+---
+
+{hasEmbed ? (
+  <div class="rounded-soft bg-white border border-lavender-100 shadow-card p-4 md:p-6">
+    <Fragment set:html={site.headwayEmbedHtml} />
+  </div>
+) : (
+  <div class="rounded-soft bg-white border border-lavender-100 shadow-card p-7 md:p-10 text-center">
+    <p class="eyebrow mb-3">Booking</p>
+    <h3 class="mb-3">Book a session on Headway</h3>
+    <p class="text-ink/70 max-w-prose mx-auto mb-7">
+      I schedule all new and returning sessions through Headway — pick a time that works for you, add your insurance for an instant cost estimate, and choose virtual or in-person.
+    </p>
+    <a href={site.headwayUrl} target="_blank" rel="noopener" class="btn-primary">
+      See available times
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+    </a>
+  </div>
+)}

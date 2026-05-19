@@ -1,0 +1,42 @@
+---
+import { site } from '~/content/site';
+
+const icons: Record<string, string> = {
+  Anxiety:
+    '<path d="M3 12h3l2-7 4 14 2-7h7"/>',
+  Depression:
+    '<path d="M21 12a9 9 0 1 1-9-9"/><path d="M12 12 8 8"/><circle cx="12" cy="12" r="1.5"/>',
+  'Substance use & addiction':
+    '<path d="M7 3h10l-1 5a4 4 0 0 1-8 0L7 3Z"/><path d="M9 21h6"/><path d="M12 13v8"/>',
+};
+const defaultIcon = '<circle cx="12" cy="12" r="8"/>';
+---
+
+<section id="services" aria-labelledby="services-heading" class="py-20 md:py-28">
+  <div class="container-prose">
+    <p class="eyebrow mb-4">Services</p>
+    <h2 id="services-heading" class="mb-3 max-w-prose">Therapy for adolescents and adults in {site.location.city}, {site.location.region}.</h2>
+    <p class="text-ink/70 text-lg max-w-prose mb-12">
+      In-person at my Beverly office and virtual sessions for clients across Massachusetts — including {site.areasServed.slice(0, 5).join(', ')}, and the broader North Shore and Greater Boston area.
+    </p>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {site.specialties.map((s) => (
+        <article class="rounded-soft bg-white border border-lavender-100 shadow-card p-7 hover:border-lavender-300 transition-colors">
+          <div class="w-11 h-11 rounded-full bg-lavender-100 text-lavender-700 flex items-center justify-center mb-5">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" set:html={icons[s.title] ?? defaultIcon} />
+          </div>
+          <h3 class="mb-2">{s.title}</h3>
+          <p class="text-ink/75">{s.blurb}</p>
+        </article>
+      ))}
+    </div>
+
+    <div class="mt-12 rounded-soft bg-blush-200 border border-blush-400/50 p-6 md:p-7 flex flex-col md:flex-row md:items-center gap-4 justify-between">
+      <p class="text-ink/80">
+        Not sure if we’re a fit? Book a first session and we’ll figure that out together — no pressure to keep coming back if it isn’t the right match.
+      </p>
+      <a href={site.headwayUrl} target="_blank" rel="noopener" class="btn-primary shrink-0">Book on Headway</a>
+    </div>
+  </div>
+</section>

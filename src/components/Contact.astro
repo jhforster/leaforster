@@ -1,0 +1,46 @@
+---
+import { site } from '~/content/site';
+import BookingWidget from './BookingWidget.astro';
+const fullAddress = site.location.showStreetAddress
+  ? `${site.location.street}, ${site.location.city}, ${site.location.region} ${site.location.postalCode}`
+  : `${site.location.city}, ${site.location.region}`;
+---
+
+<section id="contact" aria-labelledby="contact-heading" class="py-20 md:py-28">
+  <div class="container-prose">
+    <div class="grid lg:grid-cols-5 gap-10 lg:gap-14 items-start">
+      <div class="lg:col-span-2">
+        <p class="eyebrow mb-4">Contact</p>
+        <h2 id="contact-heading" class="mb-5">Get in touch.</h2>
+        <p class="text-ink/75 text-lg mb-8 max-w-prose">
+          Ready to start? Book directly through Headway. Have a quick question first? Reach out by email and I’ll get back to you within a couple of business days.
+        </p>
+
+        <dl class="space-y-5 text-sm">
+          <div>
+            <dt class="text-ink/60 mb-1">Office</dt>
+            <dd class="font-medium text-ink">{fullAddress}</dd>
+          </div>
+          <div>
+            <dt class="text-ink/60 mb-1">Sessions</dt>
+            <dd class="font-medium text-ink">{site.modalities.join(' · ')}</dd>
+          </div>
+          {site.email && (
+            <div>
+              <dt class="text-ink/60 mb-1">Email</dt>
+              <dd><a href={`mailto:${site.email}`}>{site.email}</a></dd>
+            </div>
+          )}
+          <div>
+            <dt class="text-ink/60 mb-1">Headway profile</dt>
+            <dd><a href={site.headwayUrl} target="_blank" rel="noopener">care.headway.co/providers/lea-forster</a></dd>
+          </div>
+        </dl>
+      </div>
+
+      <div class="lg:col-span-3">
+        <BookingWidget />
+      </div>
+    </div>
+  </div>
+</section>
